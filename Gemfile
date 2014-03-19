@@ -5,6 +5,9 @@ gem 'rails', '4.0.3'
 
 gem 'rails-api'
 
+gem 'active_model_serializers'
+gem 'pry'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
