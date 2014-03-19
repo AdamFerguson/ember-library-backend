@@ -12,13 +12,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(params[:book])
+    @book = Book.create(book_params)
     respond_with @book
   end
 
   def update
     @book = Book.find(params[:id])
-    @book.update_attributes(params[:book])
+    @book.update_attributes(book_params)
     respond_with @book
   end
 
@@ -26,5 +26,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
     respond_with @book
+  end
+
+  private
+
+  def book_params
+    params.require(:book).permit!
   end
 end
